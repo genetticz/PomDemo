@@ -39,7 +39,7 @@ public class TargetHome {
 
     @FindBy(how = How.XPATH, xpath = "//span[text() = \"Sign in\"]")
     WebElement sDropDown;
-
+    //locator strategy - important
     @FindBy(how = How.XPATH, xpath = "/html/body/div[8]/div/div/ul/li[1]")
     WebElement sTransport;
 

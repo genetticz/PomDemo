@@ -29,6 +29,7 @@ public class TargetSigninTest extends BrowserDriver {
         t1 = PageFactory.initElements(driver,TargetHome.class);
         ts1 = PageFactory.initElements(driver,TargetSignin.class);
     }
+
     @Test(priority = 0)
     public void testSignIn() {
         boolean signInUrl = false;
@@ -49,16 +50,14 @@ public class TargetSigninTest extends BrowserDriver {
         return usersData;
     }
 
-//    @Test(dataProvider = "retrieveSheets", priority = 1)
+    @Test(dataProvider = "retrieveSheets", priority = 1)
     public void signIn(String username,String password) throws InterruptedException {
         t1.getSignOn();
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(t1.isSignOn()));
         t1.clickSignOn();
-        ApplicationPageBase.sendKeys("username",ts1.getUsername(),username);
-        ApplicationPageBase.sendKeys("password",ts1.getUserpass(),password);
-        Thread.sleep(2000);
+        ts1.getUsername(username);
+        ts1.getUserpass(password);
         ts1.clickSignin();
     }
-
 }

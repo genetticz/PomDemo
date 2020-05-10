@@ -19,11 +19,11 @@ public class TargetSignin {
     @FindBy(how = How.ID, id = "login")
     WebElement signBtn;
 
-    public WebElement getUsername(){
-        return username;
+    public void getUsername(String user){
+        ApplicationPageBase.sendKeys("username",username,user);
     }
-    public WebElement getUserpass(){
-        return userpass;
+    public void getUserpass(String pass){
+        ApplicationPageBase.sendKeys("password",userpass,pass);
     }
     public void clickSignin(){
         signBtn.click();
