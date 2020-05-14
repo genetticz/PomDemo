@@ -15,8 +15,8 @@
     <test name = "Target Ecommerce">
 
         <classes>
-<!--            <class name="page_objects_test.TargetHomeTest"/>-->
-            <class name="page_objects_test.TargetSigninTest"/>
+            <class name="page_objects_test.TargetHomeTest"/>
+<!--            <class name="page_objects_test.TargetSigninTest"/>-->
         </classes>
 
         <!--Hello-->

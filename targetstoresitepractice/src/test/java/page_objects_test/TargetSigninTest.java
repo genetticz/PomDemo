@@ -32,6 +32,7 @@ public class TargetSigninTest extends BrowserDriver {
 
     @Test(priority = 0)
     public void testSignIn() {
+
         boolean signInUrl = false;
         t1.getSignOn();
         WebDriverWait wait = new WebDriverWait(driver,10);
@@ -44,14 +45,16 @@ public class TargetSigninTest extends BrowserDriver {
 
     @DataProvider
     public Object[][] retrieveSheets() throws Exception {
-        MyDataReader excelData = new MyDataReader();
-        excelData.setExcelFile(System.getProperty("user.dir") + "/targetstoresitepractice/testData/testusers.xlsx");
-        String[][] usersData = excelData.getExcelSheetData("Sheet1");
+        MyDataReader excelData = new MyDataReader("../targetstoresitepractice/testData/testusers.xlsx");
+        //excelData.setExcelFile(System.getProperty("user.dir") + "/targetstoresitepractice/testData/testusers.xlsx");
+//        String[][] usersData = excelData.getExcelSheetData("Sheet1");
+        String[][] usersData = excelData.getExcelSheetData(chosenSheet);
         return usersData;
     }
 
     @Test(dataProvider = "retrieveSheets", priority = 1)
     public void signIn(String username,String password) throws InterruptedException {
+
         t1.getSignOn();
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(t1.isSignOn()));

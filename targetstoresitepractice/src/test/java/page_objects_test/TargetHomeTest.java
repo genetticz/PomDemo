@@ -27,7 +27,7 @@ public class TargetHomeTest extends BrowserDriver {
     public void init(){
         t1 = PageFactory.initElements(driver,TargetHome.class);
     }
-    @Test(priority = 1)
+    //@Test(priority = 1)
     public void testRetrieveCategories() {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         List<String> homeLinks = t1.retrieveCategories();

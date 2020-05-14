@@ -17,7 +17,8 @@ public class ExtentManager {
             File outputDirectory = new File(context.getOutputDirectory());
             File resultDirectory = new File(outputDirectory.getParentFile(),"html");
             /*generate HTML report and set its path. the boolean represents to overwrite or not to overwrite*/
-            extent = new ExtentReports(System.getProperty("user.dir")+"/Extent-Report/ExtentReport.html", true);
+            //extent = new ExtentReports(System.getProperty("user.dir")+"/Extent-Report/ExtentReport.html", true);
+            extent = new ExtentReports("../Extent-Report/ExtentReport.html", true);
             Reporter.log("Extent Report Directory"+ resultDirectory, true);
             // addsysteminfo method sets environment param and values
             extent.addSystemInfo("Host Name", "Tester").addSystemInfo("Environment","QA")

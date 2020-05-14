@@ -102,7 +102,7 @@ public class BrowserDriver {
 
 
     public static WebDriver driver = null;
-
+    public String chosenSheet;
      /**
      * Browserstack Credentials
      *
@@ -149,7 +149,7 @@ public class BrowserDriver {
         driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS); //45
         //driver.manage().window().maximize();
         driver.get(url);
-
+        chosenSheet = System.getProperty("excelsheet");
     }
 
     public WebDriver getLocalDriver(String browserName, String os) {
@@ -176,7 +176,7 @@ public class BrowserDriver {
                 driver = new ChromeDriver(options);
                 //  TestLogger.log("Chrome Browser Launched");
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.chrome.driver", "./generic/drivers/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../generic/drivers/mac/chromedriver");
                 driver = new ChromeDriver(options);
                 // TestLogger.log("Chrome Browser Launched");
             }

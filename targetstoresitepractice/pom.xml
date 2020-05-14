@@ -19,6 +19,10 @@
         </dependency>
     </dependencies>
 
+<!--    <properties>-->
+<!--            <jesus>${jesus}</jesus>-->
+<!--    </properties>-->
+
     <build>
         <plugins>
             <plugin>
